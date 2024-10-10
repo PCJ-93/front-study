@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+
+        .red-box {
+            background-color: red;
+            float: left;
+        }
+
+        .green-box {
+            background-color: green;
+            float: left;
+        }
+
+        .blue-box {
+            background-color: blue;
+            float: left;
+        }
+
+        .next {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+        }
+
+        .black-box {
+            width: 200px;
+            height: 200px;
+            border: 2px dashed black;
+            display: inline-block;
+        }
+
+        .clear-box {
+            clear: left;
+            background-color: lightblue;
+        }
+
+        .container::after {
+            content:"";         /* content 가 없으면 동작 안하므로 "" 넣어줌 */
+            display: block;      /* 기본 content 단순 텍스트는 inline이므로 block으로 바꿔줌 */
+            clear: both;        /* float 클리어 목적 이면 보통 both를 많이쓴다 */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="box black-box">
+
+    </div><div class="box black-box">
+        
+    </div><div class="box black-box"></div>
+    
+    <div class="container">
+        <div class="box red-box"></div>
+        <div class="box green-box"></div>
+        <div class="box blue-box"></div>
+        <!-- <div class="box clear-box"></div> -->
+    </div>
+    <div class="next"></div>
+
+    <!--
+        float 로 공간인식이 안될때
+        1. 임의의 크기 인식 되는 요소를 추가
+        2. clear
+            1) 마지막 요소에 clear
+            2) 가상요소 선택자에 clear
+    -->
+</body>
+
+</html>
