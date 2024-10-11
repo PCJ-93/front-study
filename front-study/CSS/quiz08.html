@@ -15,6 +15,11 @@
         .container {
             background-color: lightgray;
         }
+        .container:hover {
+            .red { width: 400px;}
+            .blue { background-color: purple;}
+            .black { margin-left: 200px;} /* 포지션relative 줄거면 시작점(0px;)도 써 줘야 한다. */
+        }
 
         .box {
             width: 100px;
@@ -23,36 +28,23 @@
             transition: 2s;
         }
 
-        .red {
-            background-color: red;
-        }
+        .red { background-color: red; }
 
-        .blue {
-            background-color: blue;
-        }
+        .blue { background-color: blue; }
 
-        .black {
-            background-color: black;
-        }
+        .black { background-color: black; }
 
-        .green {
-            background-color: green;
-        }
-        .green:hover { border: 10px solid red;}
-
+        .green { background-color: green; }
+        /* .green:hover { border: 10px solid red;} */
+                                                    /* green & yellow 에 display:inline-block; 줘서 좌우 정렬시켜도 됨. */
         .yellow {
             background-color: yellow;
             position: absolute;
             left: 100px;
             top: 300px;
         }
-        .yellow:hover { border: 10px solid red;}
+        .yellow:hover, .green:hover { border: 10px solid red;}
 
-        .container:hover {
-            .red { width: 400px; transition: 2s; }
-            .blue { background-color: purple; transition: 2s; }
-            .black { margin-left: 200px;}
-        }
     </style>
 
 
