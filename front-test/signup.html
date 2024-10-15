@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 500px;
+            background-color: rgb(27, 78, 27);
+            padding: 30px;
+        }
+
+        .top-bar {
+            background-color: gray;
+            height: 50px;
+            display: flex;
+        }
+
+        .top-bar div {
+            color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .top-left {
+            height: 100%;
+            width: 50%;
+            background-color: rgb(72, 180, 72);
+        }
+
+        .top-left a {
+            text-decoration: none;
+            color: white
+        }
+        
+        .top-right {
+            height: 100%;
+            width: 50%;
+            background-color: gray
+        }
+
+        .top-right a {
+            text-decoration: none;
+            color: lightgray;
+        }
+
+        .container h2 {
+            text-align: center;
+            color: white;
+            font-weight: normal;
+        }
+        
+        .section {
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        
+        .section input {
+            padding: 5px;
+            border: 1px solid rgb(72, 180, 72);
+            background-color: rgba(255, 255, 255, 0);
+        }
+        
+        .start {
+            background-color: rgb(72, 180, 72);
+            border: none;
+            height: 40px;
+            width: 100%;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="top-bar">
+                <div class="top-left"><a href="signup.html">Sign Up</a></div>
+                <div class="top-right"><a href="login.html">Log In</a></div>
+            </div>
+            <br>
+            <h2>Sign Up for Free</h2>
+            <div class="section">
+                <input type="email" placeholder="Email Address *">
+                <input type="password" placeholder="Set A Password *">
+                <input type="password" placeholder="Confirm A Password *">
+            </div>
+
+            <input class="start" type="button" value="GET STARTED" >
+        </form>
+
+    </div>
+</body>
+</html>
