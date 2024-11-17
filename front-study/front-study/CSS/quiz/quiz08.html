@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: lightgray;
+        }
+        .container:hover {
+            .red { width: 400px;}
+            .blue { background-color: purple;}
+            .black { margin-left: 200px;} /* 포지션relative 줄거면 시작점(0px;)도 써 줘야 한다. */
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            transition: 2s;
+        }
+
+        .red { background-color: red; }
+
+        .blue { background-color: blue; }
+
+        .black { background-color: black; }
+
+        .green { background-color: green; }
+        /* .green:hover { border: 10px solid red;} */
+                                                    /* green & yellow 에 display:inline-block; 줘서 좌우 정렬시켜도 됨. */
+        .yellow {
+            background-color: yellow;
+            position: absolute;
+            left: 100px;
+            top: 300px;
+        }
+        .yellow:hover, .green:hover { border: 10px solid red;}
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="box red"></div>
+        <div class="box blue"></div>
+        <div class="box black"></div>
+        <div class="box green"></div>
+        <div class="box yellow"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            background-color: blue;
+
+            position: relative;
+
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-fill-mode: both;
+        }
+        .box:hover { animation-play-state: paused;}
+
+        
+        .ani1 {
+            animation-name: a1;
+        }
+        @keyframes a1 {
+            0% {background-color: blue; left: 0px;}
+            50% {background-color: orange; left: 100px;}
+            100% {background-color: pink; left: 200px;}
+        }
+
+
+        .ani2 {
+            animation-name: a2;
+        }
+        @keyframes a2 {
+            0% {background-color: blue; top: 0px;}
+            50% {background-color: orange; top: 100px;}
+            100% {background-color: pink; top: 200px;}
+        }
+
+
+        .ani3 {
+            animation-name: a3;
+        }
+        @keyframes a3 {
+            0% {background-color: blue; left: 0px; top: 0px;}
+            50% {background-color: orange; left: 100px; top: 100px;}
+            100% {background-color: pink; left: 200px; top: 200px;}
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box ani1"></div>
+    <div class="box ani2"></div>
+    <div class="box ani3"></div>
+</body>
+</html>

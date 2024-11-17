@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .bg-red {
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <p>글자</p>
+    </div>
+
+    <div class="container">
+        <div class="box a" id="box-a-id">A</div>
+        <div class="box b">B</div>
+        <div class="box c">C</div>
+    </div>
+
+    <p id="target">text<span style="display: none;">hidden</span></p>
+
+    <script>
+        let cup = '콜라';        // 변할수 있는 
+        cup = '맥주';
+        cup = '오뎅국물';
+
+        const boxA = document.getElementById('box-a-id');  // 바꿀일이 없는
+
+        console.log(boxA);
+
+        document.getElementById('box-a-id');
+        document.getElementsByClassName('box');
+
+        document.querySelector('#box-a-id');
+        document.querySelectorAll('.container');
+
+        const div_target = document.getElementById('target');
+        console.log(div_target.textContent);
+        console.log(div_target.innerText);
+        console.log(div_target.innerHTML);
+
+        document.getElementById('target').textContent = 'textContent 작성';
+        document.getElementById('target').innerText = 'innerText 작성';
+        document.getElementById('target').innerHTML = 'innerHTML 작성';
+
+        div_target.style.color ='#ab93f6';
+
+        document.querySelector('#box-a-id').classList.add('bg-red');
+
+    </script>
+</body>
+</html>

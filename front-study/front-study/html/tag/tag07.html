@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="email" placeholder="e-mail">
+    
+    <br>
+
+    <label><input type="checkbox">패티추가</label>
+    <input type="checkbox" id="chb_cheese"><label for="chb_cheese">치즈추가</label>
+    <input type="checkbox" id="chb_pickle" checked><label for="chb_pickle">피클추가</label>
+
+    <br>
+
+    <fieldset>
+        <legend>족발 사이즈</legend>
+        <label>족발 소<input type="radio" name="level" disabled></label>
+        <label>족발 중<input type="radio" name="level"></label>
+        <label for="rd_large">족발 대</label><input type="radio" name="level" id="rd_large" checked>
+    </fieldset>
+
+    <br>
+
+    <textarea readonly>다중 텍스트 입력 공간</textarea>
+
+    <br>
+    <select>
+        <optgroup label="햄버거">
+        <option>싸이버거</option>
+        <option>휠렛버거</option>
+        <option>치즈버거</option>
+        </optgroup>
+        <optgroup label="면류">
+            <option selected>냉면</option>
+            <option disabled>국수</option>
+            <option>라면</option>
+            </optgroup>
+    </select>
+
+    <br>
+    <br>
+    
+    <select size="3" multiple>
+        <optgroup label="햄버거">
+        <option>싸이버거</option>
+        <option disabled>휠렛버거</option>
+        <option>치즈버거</option>
+        </optgroup>
+        <optgroup label="면류">
+            <option>냉면</option>
+            <option>국수</option>
+            <option>라면</option>
+            </optgroup>
+    </select>
+
+    <br>
+    <input type="button" value="인풋버튼"> <!-- submit reset -->
+    <button type="button">태그버튼</button> <!-- 폼 구성하기 -->
+<br>
+    <button>
+        <img src="images/sample.jpg" alt="이미지">
+        광고 이미지 버튼
+    </button>
+
+    <br>
+    <input type="password" maxlength="5"> <!-- maxlength = 입력글자수 제한 -->
+
+    <br>
+    <input type="text" value="성명 입력">
+    <br>
+    <input type="text" placeholder="성명 입력">
+    
+</body>
+</html>

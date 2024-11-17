@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            margin: 400px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+            /* transform: translate(50px, 100px); */
+            /* transform: scale(0.5, 0.5); */
+            /* transform: skewY(45deg); */
+            transform-origin: right bottom;  /* 기준점 :x위치, y위치 */
+            transform: rotate(55deg) translateY(180px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

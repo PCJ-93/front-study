@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.container {
+margin: 0 auto;
+width: 80%;
+height: 400px;
+margin-top: 50px;
+}
+
+.container1 {
+background-color: lightgray;
+}
+
+.item-inline-block {
+width: 50%;
+height: 200px;
+border: 1px solid black;
+display: inline-block;
+}
+
+
+.container2 {
+background-color: lightgoldenrodyellow;
+display: flex;
+}
+.item-flex {
+border: 1px solid black;
+flex: 1;   /* 공간 차지하는 비율 */
+}
+
+
+.container3 {
+background-color: lightskyblue;
+}
+
+.item-float {
+float: left;
+width: 50%;
+border: 1px solid black;
+height: 200px;
+}
+
+/* 미디어쿼리는 스타일 맨 마지막 부분에 작성 */
+
+@media screen and (max-width:600px) {
+    .item-inline-block {
+        width:100%
+    }
+
+    .container2 {
+        flex-direction: column;
+    }
+
+    .item-float {
+        width: 100%;
+        /* clear: both; 
+           width: 100%; */
+    }
+}
+
+/* 미디어쿼리 적용
+가로 사이즈 600px 아래로 내려왔을때
+
+각 배치를 세로배치로 변경하기
+세로는 반반.
+가로는 전체 다 차지 */
+
+
+</style>
+</head>
+<body>
+
+<div class="container container1">
+<div class="item-inline-block">1번
+</div><div class="item-inline-block">2번</div>
+</div>
+
+<div class="container container2">
+<div class="item-flex">3번
+</div><div class="item-flex">4번</div>
+</div>
+
+<div class="container container3">
+<div class="item-float">5번
+</div><div class="item-float">6번</div>
+</div>
+</body>
+</html>
