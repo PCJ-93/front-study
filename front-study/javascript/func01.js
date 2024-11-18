@@ -51,3 +51,48 @@ const func08 = (a, b)=>{
 func08(100, 150);
 
 
+function func10(a, b){
+    console.log(a + " + b");
+}
+func01(10, 20);
+
+function func11(a, b){
+    console.log(a);
+    b();
+}
+
+function temp(){
+    console.log('temp func');
+}
+
+// function temp2(t){
+//     //code
+//     console.log('temp2 func');
+//     //code
+//     //10s
+//     t();  // 콜백
+// }
+// func11(100, temp);
+
+
+// callback 함수 (나중에 실행 할 함수)
+
+// temp2 함수를 실행하고나서 temp 함수를 실행
+function temp2(t){ // 매개변수넣어주고
+    //code~~
+    console.log('temp2 func');
+    //code~~
+    //10s딜레이주는코드~
+    t();  // 콜백함수로 코드마지막에 호출
+}
+temp2(temp);
+//temp();
+
+temp2(()=>{
+    console.log('그냥 바로 만들어서 넣은 함수');
+});
+
+
+
+
+
