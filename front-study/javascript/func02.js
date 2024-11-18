@@ -24,30 +24,39 @@ arrForEach( (a, b)=>{
 
 //setTimeout( 함수, 시간 ) : 일정시간 이후 함수가 실행
 // 시간 ms 단위 1000 => 1초
-setTimeout(
-    ()=>{
-        console.log('함수실행');
-    },
-    2000
-);
+// const cb = ()=>{
+//     console.log('callback 함수');
+// }
 
-const cb = ()=>{
-    console.log('callback 함수');
+// const outCallback = (stcb) =>{
+//     console.log('out callback 실행할거 다하고');
+//     stcb();
+// };
+
+// setTimeout(
+//     ()=>{
+
+//         console.log('함수실행');
+//         outCallback(cb);
+//     },
+//     2000
+// );
+
+
+const test1 = ()=>{
+    console.log('연습용 마지막에불러오기용');
 }
-cb();
 
-const outCallback = (cb) =>{
-    console.log('out callback 실행할거 다하고');
-    cb();
-};
+const test2 = (test1cd)=>{
+    console.log('연습용 할거다하고');
+    test1cd();
+}
 
 setTimeout(
     ()=>{
-
-        console.log('함수실행');
-        outCallback(cb);
+        console.log('연습용');
+        test2(test1);
     },
     2000
 );
-
 
