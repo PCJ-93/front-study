@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timeout</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: darkgreen;
+            position: relative;
+            left: 0px;
+        }
+    </style>
+
+</head>
+<body>
+    <p id="target"></p>
+
+    <div class = "box"></div>
+
+    <p id="clock"></p>
+
+    <button onclick="clearItv()">박스움직임종료</button>
+
+    
+
+    <script>
+
+        //setTimeout(실행할함수(코드), 3000);
+        setTimeout(()=>{  // 몇초 뒤에 안에 함수 실행
+            console.log('3초 지남');
+            document.getElementById('target').textContent = '3초 지났음';
+        }, 3000);
+
+        setTimeout(()=>{
+            console.log('5초 지남');
+            document.getElementById('target').style.color = 'red';
+            document.getElementById('target').textContent = '5초 지났음';
+        }, 5000);
+
+        let boxMoveItv = setInterval(()=>{  //몇초마다 안에 함수 반복
+            const box = document.getElementsByClassName('box')[0];
+            console.log(box.style.left);
+            if(box.style.left == ''||box.style.left == '600px'){
+                box.style.left = 50 + 'px';
+            } else {
+                let leftValue = box.style.left;
+                leftValue = leftValue.replace('px','');
+
+                box.style.left = Number(leftValue) +1 +'px';
+            }
+            
+        }, 1);
+
+        setInterval(()=>{ //몇초마다 안에 함수 반복
+            const current = new Date();
+            //오라클에서 RPAD LPAD => 자바스크립트에서는 padStart padEnd 빈자리에 채우기
+            const time = 
+            String(current.getHours()).padStart(2,'0') 
+            + ":" + String(current.getMinutes()).padStart(2,'0')
+            + ":" + String(current.getSeconds()).padStart(2,'0');
+
+            document.getElementById('clock').textContent = time;
+        }, 1000);
+
+        function clearItv(){
+            clearInterval(boxMoveItv);
+        }
+        
+    </script>
+</body>
+</html>
