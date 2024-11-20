@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <h1>form01</h1>
+
+    <form action="" method="" id="frm_main"> <!-- action: submit할때 제출될경로// method:   -->
+        아이디<input type="text" id="input_id" value="아이디입력"><br>
+        비번<input type="password" id="input_pw" placeholder="비번입력"><br>
+        <button id="btn_btn" type="button">단순버튼</button>
+        <button id="btn_submit" type="submit">제출(submit열할)</button>
+
+    </form>
+
+    <img src="https://cdn.pixabay.com/photo/2023/03/28/09/29/tulip-7882705_1280.jpg" onload="complt()">
+
+
+
+    <script>
+        const btn_btn = document.querySelector('#btn_btn');
+        const btn_submit = document.querySelector('#btn_submit');
+
+        btn_btn.addEventListener('click', ()=>{console.log('btn_btn click');});
+        btn_submit.addEventListener('click', ()=>{console.log('btn_submit click');});
+
+        const input_id = document.getElementById('input_id');
+
+        // submit 이벤트는 form 에게 설정한다. (submit버튼: 폼한테 요청.. form이 전송 실행)
+        const frm_main = document.querySelector('#frm_main');
+        frm_main.addEventListener('submit', (event01)=>{  // 매개변수(event01)를 넣으면 이벤트정보전달
+            console.log('form submit 이벤트 발생');
+            event01.preventDefault();  // 기본 발생 이벤트 취소 (submit -> 다른 페이지로 폼전송->새로고침)을 취소
+            // form action="" 작성된 경로로 전송
+            // 다른경로 -> 다른 경로 페이지로 이동
+            // 비어있는 값, 동일 페이지상태 -> 새로고침  ..  을 막는다(preventDefault();)
+
+            //전송 관련 코드(확인및검사)
+            if(input_id.value == ''){
+                alert('아이디 좀 입력해주세요.');
+                return;  //검사에서 걸리면 돌려보냄
+            }
+            // 필터링 검증단계
+
+            // 검증 끝나면 submit 발생시키는 코드 작성
+            frm_main.submit();  // 원래 하려던 폼 submit
+
+        });
+
+
+
+        console.log(document.getElementById('input_id').value);   // 아이디가 input_id 인곳에 접근
+        console.log(document.querySelector('#input_pw').value);    // 동일
+
+        document.querySelector('#input_pw').value = 'abcde';
+
+        
+
+        input_id.addEventListener('keydown', ()=>{ console.log('keydown 발생') });
+        input_id.addEventListener('keypress', ()=>{ console.log('keypress 발생') });
+        input_id.addEventListener('keyup', ()=>{ console.log('keyup 발생') });
+
+        input_id.addEventListener('focus', ()=>{console.log('focus 됨');});
+        input_id.addEventListener('blur', ()=>{console.log('blur 됨');});
+
+        function complt(){
+            console.log('이미지 로딩');
+        }
+
+        window.onload = ()=>{ // 일단 화면부터 띄운 다음 뒤에서 오래걸리는 처리하는 곳으로 사용하는 용도
+            //브라우저 최상위 객체 window 창 기준으로 모든 페이지정보가 로딩 된 이후 처리!
+            // 처리 프로세스 코드
+
+        }
+
+    </script>
+</body>
+</html>

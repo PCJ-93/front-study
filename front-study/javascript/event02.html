@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <p id="pid">texttexttext</p>
+    
+    <a id="aid" href="https://naver.com">네이버로 링크</a>
+
+    <div id="container">
+    </div>
+
+    <p id="target"></p>
+
+
+    <script> // 스크립트에서 body태그안에 있는것들 동적으로 조작하기
+
+        //document.getElementById('pid').style.color = 'green';
+        document.getElementById('pid').classList.add('red');
+        document.getElementById('pid').classList.add('blue');
+        document.getElementById('pid').classList.remove('blue');
+        document.getElementById('pid').classList.toggle('red');
+        setInterval(()=>{ //몇초마다 안에 함수 반복
+            document.getElementById('pid').classList.toggle('red');
+        }, 1000);
+
+        const aEle = document.querySelector('#aid');
+        console.log(aEle.getAttribute('href'));  //href 의 속성값 확인 (네이버주소)
+        aEle.setAttribute('href', 'https://netflix.com');  //href의 속성값 변경 (넷플릭스로)
+        aEle.setAttribute('target', '_blank');           // href 에 블랭크 추가
+        console.log(aEle.getAttribute('href'));
+
+        //aEle color red 로 바꾸고싶다~
+        aEle.style.color = 'red';
+        aEle.classList.add('red');       //class='값'+red  class='값 red'  원래값에 red 값을 추가 --이거쓰는게좋다
+        aEle.setAttribute('class','red');  //class='red'  class='값' 덮어씌워서 class='red'로 변경
+
+        aEle.removeAttribute('target');
+
+        //노드 추가하기
+        const newEle = document.createElement("p");  //p태그생성
+        const divCon = document.getElementById('container');  //생성한 p태그 넣을 위치 찾고 
+      
+
+        const txtEle = document.createTextNode("p태그안에 text"); //p태그에 넣을 텍스트 작성
+        const attEle = document.createAttribute("class");
+        attEle.value = "blue";
+        divCon.appendChild(newEle);  //div에 생성한p태그 넣기
+        newEle.appendChild(txtEle);  // p태그에 작성한 텍스트 넣기
+        newEle.setAttributeNode(attEle);  // p->속성추가
+
+        document.getElementById('target').innerHTML = "<strong>p target text</strong>";
+                            //createElement("strong")
+                            //createTextNode("p target text")
+                            //ele.appendChild(text)
+                            //target.appendChild(ele)
+                            //jQuery 라이브러리활용, React 작성방식
+
+         ///  노드삭제하기
+        document.getElementById('target').removeChild(document.querySelector('strong'));
+        // 부모노드.removeChild(자식노드)
+
+    </script>
+
+</body>
+</html>
