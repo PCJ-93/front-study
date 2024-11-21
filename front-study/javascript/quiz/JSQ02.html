@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+
+<from id="frm_main">
+    <input type="text" id="loginId" placeholder="아이디"><br>
+    <input type="password" id="loginPw" placeholder="비밀번호"><br>
+    <button id="btnLogin" onclick="tryLogin()">로그인 시도</button><br>
+</from>
+
+<script>
+//코드작성
+    function tryLogin(){
+        document.getElementById('btnLogin').setAttribute('type','submit');
+    }
+    
+    const logId = document.getElementById('loginId');
+    const logPw = document.getElementById('loginPw');
+    document.getElementById('loginId').addEventListener('keydown', (event)=>{
+        //event 키보드 이벤트 정보 객체
+        console.log(event.keyCode);  //중요한거. (tab을 눌렀냐 엔터를 눌렀냐)
+
+        if(event.keyCode == 13){    // 엔터의 키코드는 13 기억해두면 좋다.!!!!
+            document.getElementById('loginPw').focus();
+        }
+        
+        
+    });
+    document.getElementById('loginPw').addEventListener('keydown', (event)=>{
+        if(event.keyCode == 13){    // 엔터의 키코드는 13 기억해두면 좋다.!!!!
+            tryLogin();
+        }
+        
+    });
+
+    document.getElementById('frm_main').addEventListener('submit', (event)=>{
+            event.preventDefault();
+
+            if(logId.value == ''){
+            alert('아이디필수입력');
+            document.getElementById('loginId').focus();
+            }
+
+            if(logPw.value == ''){
+            alert('비밀번호필수입력');
+            document.getElementById('loginPw').focus();
+            }
+
+            if(event.keyCode == 13){ 
+                tryLogin();
+            }
+        
+            if(logPw.value != ''&& logId.value != ''){
+                document.getElementById('frm_main').submit();
+            }
+
+        });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+    <form id="frm">
+        <input type="text" id="input_text">
+        <input type="text" id="input_name">
+        <button type="submit">submit</button>
+    </form>
+
+    <div class="box"></div>
+    
+
+    <script>
+
+        document.getElementById('frm').addEventListener('submit', (event)=>{
+            event.preventDefault();   // submit 작동 막아두는거..  (엔터키 키코드 확인)
+        });
+
+        document.getElementById('input_text').addEventListener('keydown', (event)=>{
+            //event 키보드 이벤트 정보 객체
+            console.log(event);
+
+            console.log(event.keyCode);  //중요한거. (tab을 눌렀냐 엔터를 눌렀냐)
+            console.log(event.ctrlkey);
+
+            if(event.keyCode == 81){  // 이벤트 키코드가 81이면
+                alert('q가눌림');
+            }
+
+            if(event.keyCode == 13){    // 엔터의 키코드는 13 기억해두면 좋다.!!!!
+                alert('엔터눌림');
+            }
+        });
+
+        document.querySelector('.box').addEventListener('click', (event)=>{
+            //event 마우스 이벤트 정보 객체
+
+            console.log(event);
+
+            console.log(event.clientX);
+            console.log(event.clientY);
+            console.log(event.pageX);
+            console.log(event.pageY);
+            console.log(event.screenX);
+            console.log(event.screenY);
+        });
+    </script>
+</body>
+</html>

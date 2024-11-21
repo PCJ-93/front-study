@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .bg-red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+        // 내가 누른 박스만 배경색상이 빨간색으로 변경
+
+        // this 와 event 를 사용한 방법
+        const boxArr = document.querySelectorAll('.box');
+        boxArr.forEach((item)=>{
+            item.addEventListener('click', (event)=>{
+                //console.log(this);
+                console.log(event);
+                event.target.classList.toggle('bg-red');
+                //event.target == 이벤트가 발생한 box 요소
+            });
+        });
+
+
+        //function 에서 this 키워드 활용한 방법
+        // const boxArr = document.querySelectorAll('.box');
+        // boxArr.forEach((item)=>{
+        //     item.addEventListener('click', function(){
+        //         console.log(this);
+        //         this.classList.toggle('bg-red');
+        //     });
+        // });
+
+
+        // forEach 를 사용한 방법
+        // const boxArr = document.querySelectorAll('.box');
+        // boxArr.forEach((item)=>{
+        //     item.addEventListener('click', ()=>{
+        //         item.classList.toggle('bg-red');
+        //     });
+        // });
+
+
+        // 배열,반복문을 사용한 방법.. (배열의 인덱스별로 적용)
+        // const boxArr = document.querySelectorAll('.box');
+        // for(let i=0; i<boxArr.length; i++){
+        //     //boxArr[i].onclick = ()=>{}
+        //     boxArr[i].addEventListener('click', ()=>{
+        //         boxArr[i].classList.toggle('bg-red');
+        //     });
+        // }
+
+
+        // 개별적으로 적용..한방법..
+        // const box1 = document.getElementById('box1');
+        // const box2 = document.getElementById('box2');
+        // const box3 = document.getElementById('box3');
+        // box1.addEventListener('click', ()=>{
+        //     box1.classList.toggle('bg-red');
+        // });
+        // box2.addEventListener('click', ()=>{
+        //     box2.classList.toggle('bg-red');
+        // });
+        // box3.addEventListener('click', ()=>{
+        //     box3.classList.toggle('bg-red');
+        // });
+
+    </script>
+</body>
+</html>

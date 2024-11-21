@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="loginId" placeholder="아이디"><br>
+    <input type="password" id="loginPw" placeholder="비밀번호"><br>
+    <button id="btnLogin" onclick="tryLogin()">로그인 시도</button><br>
+
+    <script>
+        //코드작성
+        const input_id = document.getElementById('loginId');
+        const input_pw = document.getElementById('loginPw');
+        const btnLogin = document.getElementById('btnLogin');
+
+        function tryLogin(){
+            input_id.value = '';
+            input_pw.value = '';
+        }
+
+        input_id.addEventListener('keydown', (event)=>{
+            if(event.keyCode == 13){
+                input_pw.focus();
+            }
+        });
+
+        input_pw.addEventListener('keydown', (event)=>{
+            if(event.keyCode == 13){
+                //1) 똑같은 코드사용
+                // input_id.value = '';
+                // input_pw.value = '';
+
+                //2) 동일한 함수 호출
+                //tryLogin();
+
+                //3) 로그인버튼을눌러버리는효과
+                btnLogin.click();
+                //btnLogin.focus();  // 버튼은 포커스만 해도 눌리는 효과가 난다(브라우저별로안될수도있어서)
+            }
+        });
+
+    </script>
+</body>
+
+</html>
